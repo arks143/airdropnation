@@ -1,78 +1,41 @@
-
-//require('/js/web3.min.js')();
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
 const express = require('express'); //Import the express dependency
-const app = express(); 
-
-const hostname = 'localhost';
-const port = 4000;
-
-
-const server = http.createServer((req, res) => {
-    console.log('Request for ' + req.url + ' by method ' + req.method);
-
-
-    if (req.method == 'GET') {
-        var fileUrl;
-        if (req.url == '/') fileUrl = '/index.html';
-        else fileUrl = req.url;
-
-        var filePath = path.resolve('./public' + fileUrl);
-        const fileExt = path.extname(filePath);
-        if (fileExt == '.html') {
-            fs.exists(filePath, (exists) => {
-                if (!exists) {
-                    filePath = path.resolve('./public/404.html');
-                    res.statusCode = 404;
-                    res.setHeader('Content-Type', 'text/html');
-                    fs.createReadStream(filePath).pipe(res);
-                    return;
-                }
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'text/html');
-                fs.createReadStream(filePath).pipe(res);
-            });
-        }
-        else if (fileExt == '.css') {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/css');
-            fs.createReadStream(filePath).pipe(res);
-        }
-        else if (fileExt == '.js') {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/css');
-            fs.createReadStream(filePath).pipe(res);
-        }
-                else if (fileExt == '.jpg') {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'image/jpeg');
-            fs.createReadStream(filePath).pipe(res);
-        }
-        else {
-            filePath = path.resolve('./public/404.html');
-            res.statusCode = 404;
-            res.setHeader('Content-Type', 'text/html');
-            fs.createReadStream(filePath).pipe(res);
-        }
-    }
-    else {
-        filePath = path.resolve('./public/404.html');
-        res.statusCode = 404;
-        res.setHeader('Content-Type', 'text/html');
-        fs.createReadStream(filePath).pipe(res);
-    }
-});
+const app = express();
+// app.use(express.urlencode());          //Instantiate an express app, the main work horse of this server
+const port = 3000; //Save the port number where your server will be listening
+const axios = require('axios');
+let response = null;
 
 
 
 
 
+app.use(express.static('public',{extensions:['html']}));
+app.use(express.static('public/css',{extensions:['css']}));
+app.use(express.static('public/js',{extensions:['js']}));
 
-    
+// //Idiomatic expression in express to route and respond to a client request
+// app.get('/', (req, res) => { //get requests to the root ("/") will route here
+//     res.sendFile('/public/index.html', {
+//         root: __dirname
+//     }); //server responds by sending the index.html file to the client's browser
+//     //the .sendFile method needs the absolute path to the file, see: https://expressjs.com/en/4x/api.html#res.sendFile 
+// });
+// app.get('/js/index.js', (req, res) => { //get requests to the root ("/") will route here
+//     res.sendFile('/public/js/scripts.js', {
+//         root: __dirname
+//     }); //server responds by sending the index.html file to the client's browser
+//     //the .sendFile method needs the absolute path to the file, see: https://expressjs.com/en/4x/api.html#res.sendFile 
+// });
+
+// app.get('/css/styles.css', (req, res) => { //get requests to the root ("/") will route here
+//     res.sendFile('/public/css/styles.css', {
+//         root: __dirname
+//     }); //server responds by sending the index.html file to the client's browser
+//     //the .sendFile method needs the absolute path to the file, see: https://expressjs.com/en/4x/api.html#res.sendFile 
+// });
 
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+
+app.listen(port, () => { //server starts listening for any attempts from a client to connect at port: {port}
+    console.log(`Now listening on port ${port}`);
 });
