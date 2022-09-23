@@ -7,7 +7,7 @@ const express = require('express'); //Import the express dependency
 const app = express(); 
 
 const hostname = 'localhost';
-const port = 3000;
+const port = 4000;
 
 
 const server = http.createServer((req, res) => {
@@ -50,11 +50,6 @@ const server = http.createServer((req, res) => {
             res.setHeader('Content-Type', 'image/jpeg');
             fs.createReadStream(filePath).pipe(res);
         }
-                       else if (fileExt == '.png') {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'image/png');
-            fs.createReadStream(filePath).pipe(res);
-        }
         else {
             filePath = path.resolve('./public/404.html');
             res.statusCode = 404;
@@ -75,7 +70,7 @@ const server = http.createServer((req, res) => {
 
 
 
-
+    
 
 
 server.listen(port, hostname, () => {
