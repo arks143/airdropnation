@@ -1,212 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <meta name="description" content="" />
-      <meta name="author" content="" />
-      <title>Airdrop Nation</title>
-      <!-- Favicon-->
-      <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-      <!-- Core theme CSS (includes Bootstrap)-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Airdrop Nation</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-5">
+        <a class="navbar-brand" href="#!">Airdrop Nation</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                       <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Telegram</a>
+            </li>
+              <li class="nav-item">
+               <button class="button-6 wallet-connect" onclick="connectMetamask()">CONNECT TO METAMASK</button> 
+            </li>
 
-      <link href="/css/styles.css" rel="stylesheet" />
-               <!-- jQuery library -->
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-      <!-- Popper JS -->
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-      <!-- Latest compiled JavaScript -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-   </head>
-   <body>
-      <!-- Responsive navbar-->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-         <div class="container px-5">
-            <a class="navbar-brand" href="#!">Airdrop Nation</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <!--            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li> -->
-                  <li class="nav-item"><a class="nav-link" href="#!">Telegram</a></li>
-               </ul>
-            </div>
-         </div>
-      </nav>
-      <!-- Page Content-->
-      <div class="container px-4 px-lg-5">
+
+
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container px-4 px-lg-5">
       <!-- Heading Row-->
       <div class="row gx-4 gx-lg-5 align-items-center hero-block">
-         <div id="qrcode" class="col-lg-7">
-            <h1>AirDrop Nation</h1>
-         </div>
-         <div class="col-lg-5">
-            <h2 onclick="copy_data('copy-text')" >Sacrafice Address</h2>
-            <p id="copy-text" class="text-break copy-text">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
-                     <div class="tooltip-wrapper">
-<button onclick="copyTextDiv()" onmouseout="outText()">
-  <span class="tooltiptext" id="copy-tooltip">Copy</span>
-  </button>
-</div>
-         </div>
-
+        <div id="qrcode" class="col-lg-7">
+          <h1>AirDrop Nation</h1>
+        </div>
+        <div class="col-lg-5">
+          <h2 onclick="copy_data('copy-text')">Sacrafice Address</h2>
+          <p id="copy-text" class="text-break copy-text">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
+          <div class="tooltip-wrapper">
+            <button class="button-6" onclick="copyTextDiv('copy-text','copy-tooltip')" onmouseout="outText('copy-tooltip')">
+              <span class="tooltiptext" id="copy-tooltip">Copy</span>
+            </button>
+          </div>
+          <p id="accountArea">WALLET NOT CONNECTED</p>
+        </div>
       </div>
       <!-- Call to Action-->
       <div class="card text-white bg-dark bg-gradient my-5 py-4 text-center">
-         <div onclick="" class="card-body">
-            <p class="text-white m-0 ">Welcome To AirDrop Nation.</p>
-            <p class="text-white m-0 ">Take a look at our <a href="#"><b>Crypto Schoool</b></a> new modules released every week with rewards in crpto</p>
-            <p class="text-white m-0 contract_address">Coin sacrafices can be sent to "0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c" To enter draw.</p>
-                                 <div class="tooltip-wrapper">
-<button onclick="copyTextDiv()" onmouseout="outText()">
-  <span class="tooltiptext" id="copy-tooltip">Copy</span>
-  </button>
-</div>
-         </div>
-
-         <!-- <input type="text" value="Hello World" id="myInput"> -->
-
-
+        <div onclick="" class="card-body">
+          <p class="text-white m-0 ">Welcome To AirDrop Nation.</p>
+          <p class="text-white m-0 ">Take a look at our <a href="#">
+              <b>Crypto Schoool</b>
+            </a> new modules released every week with rewards in crpto </p>
+          <p class="text-white m-0 ">Coin sacrafices can be sent to "0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c" To enter draw.</p>
+          
+          <div class="tooltip-wrapper">
+            <p class="text-white m-0 copy-text1">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
+            <button class="button-6" onclick="copyTextDiv('copy-text1','copy-tooltip1')" onmouseout="outText('copy-tooltip1')">
+              <span class="tooltiptext button-6" id="copy-tooltip1">Copy Address</span>
+            </button>
+          </div>
+        </div>
+        <!-- <input type="text" value="Hello World" id="myInput"> -->
       </div>
       <!-- Content Row-->
       <div class="row gx-4 gx-lg-5">
-         <div class="col-md-4 mb-5">
-            <div class="card h-100 container-card-body">
-               <div class="card-body image">
-                  <h2 class="card-title ">Tiger SOL</h2>
-                  <p class="card-text commaSeparated">
-                     This NFT Project Will be launching on the solana block chain. It sole purpuse is to build up a community thay wants to preserve the Tigers of the world.
-                  </p>
-                  <p class="card-text commaSeparated">
-                     Join Twitter and enter the prize draw to enter air-drop
-                  </p>
-               </div>
-               <img class="img-fluid rounded mx-auto d-block image" width="200"src="/assets/0.png"/>
-             <div class="middle">
-                <div class="text bg-dark bg-gradient">Comming Soon</div>
-             </div>
-               <div class="card-footer bg-light bg-gradient">
-                  <button class="button-6" role="button">Twitter</button>
-               </div>
-
+        <div class="col-md-4 mb-5">
+          <div class="card h-100 container-card-body">
+            <div class="card-body image">
+              <h2 class="card-title ">Tiger SOL</h2>
+              <p class="card-text commaSeparated"> This NFT Project Will be launching on the solana block chain. It sole purpuse is to build up a community thay wants to preserve the Tigers of the world. </p>
+              <p class="card-text commaSeparated"> Join Twitter and enter the prize draw to enter air-drop </p>
             </div>
-         </div>
-         <div class="col-md-4 mb-5">
-            <div class="card h-100 container-card-body">
-               <div class="card-body image">
-                  <h2 class="card-title ">GOS Protocol</h2>
-                  <p class="card-text commaSeparated">
-                     This a new blockchiain powered by Gold and Silver. They will issue govenment backed gold and silver coins. For every GPC Mnted. 
-                  </p>
-    <img class="img-fluid rounded mx-auto d-block image" src="/assets/gos-logo.png"/>
-               </div>
-
-                               <div class="middle">
-                <div class="text bg-dark bg-gradient">Comming Soon</div>
-             </div>
-               <div class="card-footer bg-light bg-gradient">
-                  <!-- <p id="players" class="commaSeparated" ></div> -->
-                  <!-- <p class="card-text">Score</p> -->
-                 <button class="button-6" role="button">White Paper</button>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 mb-5">
-            <div class="card h-100 container-card-body">
-               <div class="card-body image">
-                  <h2 class="card-title ">Operation BlackBeard NFT</h2>
-                  <p class="card-text commaSeparated">
-                     This NFT project is tied to a beard oil company and mens mental health.
-                     Keep a look out for this project
-                  </p>
-                  <!-- <img width="200"src="/assets/OBB.jpg"/> -->
-                  <img class="img-fluid rounded mx-auto d-block image" src="/assets/NFTOBB.png"/>
-   
-               </div>
+            <img class="img-fluid rounded mx-auto d-block image" width="200" src="/assets/0.png" />
             <div class="middle">
-                <div class="text bg-dark bg-gradient">Comming Soon</div>
-             </div>
-               <div class="card-footer bg-light bg-gradient">
-          <!--         <div class="buttons">
-                     <div class="container">
-                        <a href="#" class="btn effect04 mx-auto d-block" data-sm-link-text="Twitter" target="_blank"><span>Twitter</span></a>
-                     </div>
-                  </div> -->
-                  <button class="button-6" role="button">Twitter</button>
-               </div>
+              <div class="text bg-dark bg-gradient">Comming Soon</div>
             </div>
-         </div>
+            <div class="card-footer bg-light bg-gradient">
+              <button class="button-6" role="button">Twitter</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-5">
+          <div class="card h-100 container-card-body">
+            <div class="card-body image">
+              <h2 class="card-title ">GOS Protocol</h2>
+              <p class="card-text commaSeparated"> This a new blockchiain powered by Gold and Silver. They will issue govenment backed gold and silver coins. For every GPC Mnted. </p>
+              <img class="img-fluid rounded mx-auto d-block image" src="/assets/gos-logo.png" />
+            </div>
+            <div class="middle">
+              <div class="text bg-dark bg-gradient">Comming Soon</div>
+            </div>
+            <div class="card-footer bg-light bg-gradient">
+              <!-- <p id="players" class="commaSeparated" ></div> -->
+              <!-- <p class="card-text">Score</p> -->
+              <button class="button-6" role="button">White Paper</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-5">
+          <div class="card h-100 container-card-body">
+            <div class="card-body image">
+              <h2 class="card-title ">Operation BlackBeard NFT</h2>
+              <p class="card-text commaSeparated"> This NFT project is tied to a beard oil company and mens mental health. Keep a look out for this project </p>
+              <!-- <img width="200"src="/assets/OBB.jpg"/> -->
+              <img class="img-fluid rounded mx-auto d-block image" src="/assets/NFTOBB.png" />
+            </div>
+            <div class="middle">
+              <div class="text bg-dark bg-gradient">Comming Soon</div>
+            </div>
+            <div class="card-footer bg-light bg-gradient">
+              <!--         <div class="buttons"><div class="container"><a href="#" class="btn effect04 mx-auto d-block" data-sm-link-text="Twitter" target="_blank"><span>Twitter</span></a></div></div> -->
+              <button class="button-6" role="button">Twitter</button>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- Content Row-->
       <div class="row gx-4 gx-lg-5">
-         <div class="col-md-4 mb-5">
-            <div class="card h-100">
-               <div class="card-body ">
-                  <h2 class="card-title ">Airdrop Nation Sacrafice</h2>
-                  <p class="card-text commaSeparated">
-                     Send 1 Matic to the following address
-                  </p>
-                  <p class="card-text commaSeparated">
-                     LOTTERY SMART CONTRACT
-                  </p>
-                  <ul>
-                     <li>Only send 1 Matic to enter selection. Multiple entries will not be counted from the same wallet address</li>
-                     <li>Winner will be selected once the first 999 entries have been received</li>
-                     <li>Winner will be given 90% of the prize pool automatically via smart </li>
-                     <li>All Participants will be eligible for SOL TIGER NFT Airdrop</li>
-                     <li>You can enter for free by following our<a href=""> twitter</a> and joining our <a href=""> telegram group</a></li>
-                  </ul>
-               </div>
-               <div class="card-footer bg-light bg-gradient">
-<button class="button-6" role="button">Play</button>
-                     <div class="tooltip-wrapper">
-<button onclick="copyTextDiv()" onmouseout="outText()">
-  <span class="tooltiptext" id="copy-tooltip">Copy</span>
-  </button>
-</div>
-               </div>
+        <div class="col-md-4 mb-5">
+          <div class="card h-100">
+            <div class="card-body ">
+              <h2 class="card-title ">Airdrop Nation Sacrafice</h2>
+              <p class="card-text commaSeparated"> Send 1 Matic to the following address </p>
+              <p class="card-text commaSeparated"> LOTTERY SMART CONTRACT </p>
+              <p class="card-text commaSeparated copy-text2"> LOTTERY SMART CONTRACT </p>
+              <ul>
+                <li>Only send 1 Matic to enter selection. Multiple entries will not be counted from the same wallet address</li>
+                <li>Winner will be selected once the first 999 entries have been received</li>
+                <li>Winner will be given 90% of the prize pool automatically via smart </li>
+                <li>All Participants will be eligible for SOL TIGER NFT Airdrop</li>
+                <li>You can enter for free by following our <a href=""> twitter</a> and joining our <a href=""> telegram group</a>
+                </li>
+              </ul>
             </div>
-         </div>
-         <div class="col-md-4 mb-5">
-            <div class="card h-100">
-               <div class="card-body">
-                  <h2 class="card-title ">Crypto Quiz</h2>
-                  <p class="card-text commaSeparated">
-                     This Course will take you therough the basics of crypto.
-                  </p>
-                  <p class="card-text commaSeparated">
-                     It is important to understand the technology behind the assets you are investing in.
-                  </p>
-               </div>
-               <div class="card-footer">
-<button class="button-6" role="button">Enter</button>
-                  <!-- <a class="btn btn-primary btn-sm enter-quiz" href="/quiz.html">Exam 101</a>  -->
-               </div>
+            <div class="card-footer bg-light bg-gradient">
+              <button class="button-6" role="button">Play</button>
+              <div class="tooltip-wrapper">
+                <button class="button-6" onclick="copyTextDiv('copy-text2','copy-tooltip2')" onmouseout="outText('copy-tooltip2')">
+                  <span class="tooltiptext " id="copy-tooltip2">Copy</span>
+                </button>
+              </div>
             </div>
-         </div>
-         <div class="col-md-4 mb-5">
-            <div class="card h-100">
-               <div class="card-body">
-                  <h2 class="card-title ">Mystery Project</h2>
-                  <p class="card-text commaSeparated">
-                     This Course will take you through the Dark side of the Crypto world, security and risks
-                  </p>
-               </div>
-               <div class="card-footer bg-light bg-gradient">
-                  <!-- <a href="#" class="btn effect04" data-sm-link-text="CLICK" target="_blank"><span>GOS Whitepaper</span></a> -->
-               </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title ">Crypto Quiz</h2>
+              <p class="card-text commaSeparated"> This Course will take you therough the basics of crypto. </p>
+              <p class="card-text commaSeparated"> It is important to understand the technology behind the assets you are investing in. </p>
             </div>
-         </div>
+            <div class="card-footer">
+              <button class="button-6" role="button">Enter</button>
+              <!-- <a class="btn btn-primary btn-sm enter-quiz" href="/quiz.html">Exam 101</a>  -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title ">Mystery Project</h2>
+              <p class="card-text commaSeparated"> Connect and Enter </p>
+      
+   
+   <button onclick="connectContract()">CONNECT TO CONTRACT</button> <br>
+   <p id="contractArea"></p>
+   <button onclick="readContract()">GET DATA FROM CONTRACT</button> <br>
+   <p id="dataArea"></p>
+      <button onclick="getPlayers()">Get Players</button> <br>
+   <p id="players"></p>
+
+       <button id="connect-button">Connect Metamask</button>
+    <button id="send-button">Tip 0.001 ETH</button> 
+            </div>
+            <div class="card-footer bg-light bg-gradient">
+              <!-- <a href="#" class="btn effect04" data-sm-link-text="CLICK" target="_blank"><span>GOS Whitepaper</span></a> -->
+            </div>
+          </div>
+        </div>
+
+
+   
+
+
+
+
       </div>
       <!-- Footer-->
       <footer class="py-5 bg-dark">
-         <div class="container px-4 px-lg-5">
-            <p class="m-0 text-center text-white">Copyright &copy; AirDrop Nation 2022</p>
-         </div>
+        <div class="container px-4 px-lg-5">
+          <p class="m-0 text-center text-white">Copyright &copy; AirDrop Nation 2022</p>
+        </div>
       </footer>
       <!-- Bootstrap core JS-->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
       <!-- Core theme JS-->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="/js/scripts.js"></script>
-   </body>
+      <script src="/js/vault.js"></script>
+
+  </body>
 </html>

@@ -1,17 +1,44 @@
-//   //1- connect metamask
+<!-- Vault -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CONNECTION TO METAMASK</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <style>
+        body {
+            background-color: palevioletred;
+            font-size: 33px;
+            text-align: center;
+        }
+        button {
+            background-color: aquamarine;
+            font-size: 33px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        button:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+	<button onclick="connectMetamask()">CONNECT TO METAMASK</button> <br>
+	<p id="accountArea"></p>
+	<button onclick="connectContract()">CONNECT TO CONTRACT</button> <br>
+	<p id="contractArea"></p>
+	<button onclick="readContract()">GET DATA FROM CONTRACT</button> <br>
+	<p id="dataArea"></p>
+		<button onclick="getPlayers()">Get Players</button> <br>
+	<p id="players"></p>
+
+
+    <script>
+        //1- connect metamask
         let account;
         const connectMetamask = async () => {
             if(window.ethereum !== "undefined") {
                 const accounts = await ethereum.request({method: "eth_requestAccounts"});
                 account = accounts[0];
-
-
-								var length = 8;
-								var myTruncatedString = account.substring(0,length);
-
-                document.getElementById("accountArea").innerHTML = 'Wallet Connected '+myTruncatedString+'....';
-								document.getElementsByClassName('wallet-connect')[0].innerHTML = 'connected';
-              
+                document.getElementById("accountArea").innerHTML = account;
             }
         }
 
@@ -200,25 +227,24 @@
             ];
 
             const Address = "0x96b9CC4D906FAAa321Ae471Cdd7616d708A12ED9";
-            window.ethereum= await new Web3(window.ethereum);
-            window.contract = await new window.ethereum.eth.Contract( ABI, Address); 
+            window.web3 = await new Web3(window.ethereum);
+            window.contract = await new window.web3.eth.Contract( ABI, Address); 
             document.getElementById("contractArea").innerHTML = "connected to smart contract";
-            console.log(window.contract);
         }
 
         //3-read data from smart contract
         const readContract = async () => {
 
-			console.log(await window.contract.methods.getBalance().call());
+console.log(await window.contract.methods.getBalance().call());
 
-            const data = await window.contract.methods.getBalance().call();
-            document.getElementById("dataArea").innerHTML = data;
+            // const data = await window.contract.methods.myCity().call();
+            // document.getElementById("dataArea").innerHTML = data;
         }
 
 
         const getPlayers = async () => {
 
-			console.log(await window.contract.methods);
+			console.log(await window.contract.methods.getPlayers().call());
 
             const data = await window.contract.methods.getPlayers().call();
             document.getElementById("players").innerHTML = data;
@@ -226,49 +252,15 @@
 
 
 
+                const sendTransaction = async () => {
+
+			console.log(await window.contract.methods.getPlayers().call());
+
+            const data = await window.contract.methods.getPlayers().call();
+            document.getElementById("players").innerHTML = data;
+        }
 
 
-
-
-
- document.getElementById('connect-button').addEventListener('click', event => { 
-        let button = event.target;
-        window.ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
-          account = accounts[0];
-          console.log(account);
-          button.textContent = account;
-
-          ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
-            console.log(result);
-            let wei = parseInt(result,16);
-            let balance = wei / (10**18);
-            console.log(balance + " ETH");
-          });
-        });
-      });
-
-      // if(window.ethereum.networkVersion == 10) {
-        document.getElementById('send-button').addEventListener('click', event =>{
-          let transactionParam = {
-            to: '0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c',
-            from: account,
-            value: '0x38D7EA4C68000'
-          };
-          
-          ethereum.request({method: 'eth_sendTransaction', params:[transactionParam]}).then(txhash => {
-            console.log(txhash);
-            checkTransactionconfirmation(txhash).then(r => alert(r));
-          });
-        });
-      // }
-      function checkTransactionconfirmation(txhash) {
-
-        let checkTransactionLoop = () => {
-          return ethereum.request({method:'eth_getTransactionReceipt',params:[txhash]}).then(r => {
-            if(r !=null) return 'confirmed';
-            else return checkTransactionLoop();
-          });
-        };
-
-        return checkTransactionLoop();
-      }
+    </script>
+</body>
+</html>

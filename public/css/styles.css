@@ -11291,7 +11291,7 @@ textarea.form-control-lg {
 
 .hero-block{
       background-image: url(/assets/hero.jpg);
-    height: 150px;
+    min-height: 200px;
     background-position: center;
     background-size: cover;
 }
