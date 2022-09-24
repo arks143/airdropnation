@@ -9,7 +9,14 @@
       <!-- Favicon-->
       <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
       <!-- Core theme CSS (includes Bootstrap)-->
+
       <link href="/css/styles.css" rel="stylesheet" />
+               <!-- jQuery library -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+      <!-- Popper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
    </head>
    <body>
       <!-- Responsive navbar-->
@@ -28,22 +35,37 @@
       <!-- Page Content-->
       <div class="container px-4 px-lg-5">
       <!-- Heading Row-->
-      <div class="row gx-4 gx-lg-5 align-items-center my-5 hero-block">
+      <div class="row gx-4 gx-lg-5 align-items-center hero-block">
          <div id="qrcode" class="col-lg-7">
             <h1>AirDrop Nation</h1>
          </div>
          <div class="col-lg-5">
             <h2 onclick="copy_data('copy-text')" >Sacrafice Address</h2>
-            <p class="text-break copy-text">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
+            <p id="copy-text" class="text-break copy-text">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
+                     <div class="tooltip-wrapper">
+<button onclick="copyTextDiv()" onmouseout="outText()">
+  <span class="tooltiptext" id="copy-tooltip">Copy</span>
+  </button>
+</div>
          </div>
+
       </div>
       <!-- Call to Action-->
       <div class="card text-white bg-dark bg-gradient my-5 py-4 text-center">
          <div onclick="" class="card-body">
-            <p class="text-white m-0 contract_address">Welcome To AirDrop Nation.</p>
-            <p class="text-white m-0 contract_address">Take a look at our <a href="#"><b>Crypto Schoool</b></a> new modules released every week with rewards in crpto</p>
+            <p class="text-white m-0 ">Welcome To AirDrop Nation.</p>
+            <p class="text-white m-0 ">Take a look at our <a href="#"><b>Crypto Schoool</b></a> new modules released every week with rewards in crpto</p>
             <p class="text-white m-0 contract_address">Coin sacrafices can be sent to "0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c" To enter draw.</p>
+                                 <div class="tooltip-wrapper">
+<button onclick="copyTextDiv()" onmouseout="outText()">
+  <span class="tooltiptext" id="copy-tooltip">Copy</span>
+  </button>
+</div>
          </div>
+
+         <!-- <input type="text" value="Hello World" id="myInput"> -->
+
+
       </div>
       <!-- Content Row-->
       <div class="row gx-4 gx-lg-5">
@@ -136,6 +158,11 @@
                </div>
                <div class="card-footer bg-light bg-gradient">
 <button class="button-6" role="button">Play</button>
+                     <div class="tooltip-wrapper">
+<button onclick="copyTextDiv()" onmouseout="outText()">
+  <span class="tooltiptext" id="copy-tooltip">Copy</span>
+  </button>
+</div>
                </div>
             </div>
          </div>
@@ -180,6 +207,6 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
       <!-- Core theme JS-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script src="js/scripts.js"></script>
+      <script src="/js/scripts.js"></script>
    </body>
 </html>
