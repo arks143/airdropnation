@@ -218,7 +218,7 @@
 
         const getPlayers = async () => {
 
-			console.log(await window.contract.methods);
+			console.log(await window.contract.methods.getPlayers().call());
 
             const data = await window.contract.methods.getPlayers().call();
             document.getElementById("players").innerHTML = data;
@@ -250,12 +250,12 @@
       // if(window.ethereum.networkVersion == 10) {
         document.getElementById('send-button').addEventListener('click', event =>{
           let transactionParam = {
-            to: '0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c',
+            to: '0x96b9CC4D906FAAa321Ae471Cdd7616d708A12ED9',
             from: account,
             value: '0x38D7EA4C68000'
           };
           
-          ethereum.request({method: 'eth_sendTransaction', params:[transactionParam]}).then(txhash => {
+          window.ethereum.request({method: 'eth_sendTransaction', params:[transactionParam]}).then(txhash => {
             console.log(txhash);
             checkTransactionconfirmation(txhash).then(r => alert(r));
           });
@@ -264,7 +264,7 @@
       function checkTransactionconfirmation(txhash) {
 
         let checkTransactionLoop = () => {
-          return ethereum.request({method:'eth_getTransactionReceipt',params:[txhash]}).then(r => {
+          return window.ethereum.request({method:'eth_getTransactionReceipt',params:[txhash]}).then(r => {
             if(r !=null) return 'confirmed';
             else return checkTransactionLoop();
           });
