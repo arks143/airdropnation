@@ -30,8 +30,11 @@
 		<button onclick="getPlayers()">Get Players</button> <br>
 	<p id="players"></p>
 
-	    <button id="connect-button">Connect Metamask</button>
-    <button id="send-button">Tip 0.001 ETH</button> 
+	    <button onclick="sendCrypto()" id="enter Lottery">Enter Lotto</button>
+
+  <button id="connect-button">connect Wallet</button>
+	   <button id="send-button">Send Wallet</button>
+
 
 
     <script>
@@ -48,6 +51,7 @@
         //2- connect to smart contract
         const connectContract = async () => {
             const ABI = [
+	
 	{
 		"inputs": [],
 		"name": "enter",
@@ -57,45 +61,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "getRandomNumber",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "requestId",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "payWinner",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "pickWinner",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "requestId",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "randomness",
-				"type": "uint256"
-			}
-		],
-		"name": "rawFulfillRandomness",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -126,6 +92,19 @@
 				"internalType": "address payable[]",
 				"name": "",
 				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getRandomNumber",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -213,33 +192,21 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "randomResult",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
 	}
+
             ];
 
-            const Address = "0x96b9CC4D906FAAa321Ae471Cdd7616d708A12ED9";
+            const Address = "0xc4a1183d825abcA8D8BE8Bdced99c72f43549522";
             window.ethereum= await new Web3(window.ethereum);
             window.contract = await new window.ethereum.eth.Contract( ABI, Address); 
             document.getElementById("contractArea").innerHTML = "connected to smart contract";
-            console.log(window.contract);
+            //console.log(window.contract);
         }
 
         //3-read data from smart contract
         const readContract = async () => {
 
-			console.log(await window.contract.methods.getBalance().call());
+			//console.log(await window.contract.methods.getBalance().call());
 
             const data = await window.contract.methods.getBalance().call();
             document.getElementById("dataArea").innerHTML = data;
@@ -248,11 +215,34 @@
 
         const getPlayers = async () => {
 
-			console.log(await window.contract.methods);
+        	 
+   //        let transactionParam = {
+   //          to: '0xc4a1183d825abcA8D8BE8Bdced99c72f43549522',
+   //          from: account,
+   //          value: '10000000000000000'
+   //        };
+       
+
+			// console.log(await window.contract.methods.enter().send(transactionParam));
 
             const data = await window.contract.methods.getPlayers().call();
             document.getElementById("players").innerHTML = data;
         }
+
+
+        const sendCrypto = async () => {
+
+			console.log(await window.contract.methods);
+
+			 let transactionParam = {
+            to: '0xc4a1183d825abcA8D8BE8Bdced99c72f43549522',
+            from: account,
+            value: '10000000000000000'
+          };
+       
+       			console.log(await window.contract.methods.enter().send(transactionParam));
+        }
+
 
 
 
@@ -263,7 +253,7 @@
 
  document.getElementById('connect-button').addEventListener('click', event => { 
         let button = event.target;
-        window.ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+        ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
           account = accounts[0];
           console.log(account);
           button.textContent = account;
@@ -280,10 +270,10 @@
       // if(window.ethereum.networkVersion == 10) {
         document.getElementById('send-button').addEventListener('click', event =>{
           let transactionParam = {
-            to: '0x022132Cbe6402CbDEdb051bF9cCca6fcA8F88B0a',
+            to: '0xEdc8698f15305F215F8196133401C072d2B298D7',
             from: account,
-            value: '38D7EA4C68000',
-         gas: '21000'
+            value: '71AFD498D0000',
+         gas: '21000',
           };
           
           ethereum.request({method: 'eth_sendTransaction', params:[transactionParam]}).then(txhash => {
@@ -303,7 +293,6 @@
 
         return checkTransactionLoop();
       }
-
 
 
 

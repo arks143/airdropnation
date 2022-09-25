@@ -85,7 +85,7 @@ body {
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
   /*background-color: var(--bs-body-bg);*/
-  background-image: linear-gradient(to right top, #0d1a2d, #001a3d, #00194b, #001659, #040f64);
+background-image: linear-gradient(to right top, #03070d, #0a1214, #131918, #1c1e1b, #252420);
   background-size: 1090px;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -11386,6 +11386,6 @@ textarea.form-control-lg {
   padding: 16px 32px;
 }
 
-
+.btn-wrapper{display: inline-flex;}
 
 

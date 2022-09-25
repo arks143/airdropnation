@@ -27,7 +27,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                       <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                       <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li> -->
             <li class="nav-item">
               <a class="nav-link" href="#!">Telegram</a>
             </li>
@@ -48,16 +48,13 @@
       <div class="row gx-4 gx-lg-5 align-items-center hero-block">
         <div id="qrcode" class="col-lg-7">
           <h1>AirDrop Nation</h1>
+          <p id="copy-text" class="text-break copy-text">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
         </div>
         <div class="col-lg-5">
-          <h2 onclick="copy_data('copy-text')">Sacrafice Address</h2>
-          <p id="copy-text" class="text-break copy-text">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
-          <div class="tooltip-wrapper">
-            <button class="button-6" onclick="copyTextDiv('copy-text','copy-tooltip')" onmouseout="outText('copy-tooltip')">
-              <span class="tooltiptext" id="copy-tooltip">Copy</span>
-            </button>
-          </div>
+          <p id="welcome"></p>
           <p id="accountArea">WALLET NOT CONNECTED</p>
+
+.
         </div>
       </div>
       <!-- Call to Action-->
@@ -68,13 +65,17 @@
               <b>Crypto Schoool</b>
             </a> new modules released every week with rewards in crpto </p>
           <p class="text-white m-0 ">Coin sacrafices can be sent to "0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c" To enter draw.</p>
-          
+          <div class="btn-wrapper">
+                    <button class="button-6" id="send-button" disabled>Sacrafice Disabled</button>
           <div class="tooltip-wrapper">
-            <p class="text-white m-0 copy-text1">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
-            <button class="button-6" onclick="copyTextDiv('copy-text1','copy-tooltip1')" onmouseout="outText('copy-tooltip1')">
-              <span class="tooltiptext" id="copy-tooltip1">Copy Address</span>
+            <button class="button-6" onclick="copyTextDiv('copy-text','copy-tooltip')" onmouseout="outText('copy-tooltip')">
+              <span class="tooltiptext" id="copy-tooltip">Copy Address</span>
             </button>
           </div>
+          </div>
+          <h3 id="demo"></h3>
+          
+ 
         </div>
         <!-- <input type="text" value="Hello World" id="myInput"> -->
       </div>
@@ -92,7 +93,7 @@
               <div class="text bg-dark bg-gradient">Comming Soon</div>
             </div>
             <div class="card-footer bg-light bg-gradient">
-              <button class="button-6" role="button">Twitter</button>
+              <button class="button-6" role="button" disabled>Comming Soon</button>
             </div>
           </div>
         </div>
@@ -100,7 +101,7 @@
           <div class="card h-100 container-card-body">
             <div class="card-body image">
               <h2 class="card-title ">GOS Protocol</h2>
-              <p class="card-text commaSeparated"> This a new blockchiain powered by Gold and Silver. They will issue govenment backed gold and silver coins. For every GPC Mnted. </p>
+              <p class="card-text commaSeparated"> This a new blockchiain powered by Gold and Silver. They will issue govenment backed gold and silver coins.</p>
               <img class="img-fluid rounded mx-auto d-block image" src="/assets/gos-logo.png" />
             </div>
             <div class="middle">
@@ -109,7 +110,8 @@
             <div class="card-footer bg-light bg-gradient">
               <!-- <p id="players" class="commaSeparated" ></div> -->
               <!-- <p class="card-text">Score</p> -->
-              <button class="button-6" role="button">White Paper</button>
+              
+              <a href="/assets/GOS-Blockchain-Lite_Paper.pdf"><button href="/public/assets/GOS-Blockchain-Lite_Paper.pdf" class="button-6" role="button">Lite Paper</button></a>
             </div>
           </div>
         </div>
@@ -126,7 +128,7 @@
             </div>
             <div class="card-footer bg-light bg-gradient">
               <!--         <div class="buttons"><div class="container"><a href="#" class="btn effect04 mx-auto d-block" data-sm-link-text="Twitter" target="_blank"><span>Twitter</span></a></div></div> -->
-              <button class="button-6" role="button">Twitter</button>
+              <button class="button-6" role="button" disabled>Comming Soon</button>
             </div>
           </div>
         </div>
@@ -138,7 +140,6 @@
             <div class="card-body ">
               <h2 class="card-title ">Airdrop Nation Sacrafice</h2>
               <p class="card-text commaSeparated"> Send 1 Matic to the following address </p>
-              <p class="card-text commaSeparated"> LOTTERY SMART CONTRACT </p>
               <p class="card-text commaSeparated copy-text2"> LOTTERY SMART CONTRACT </p>
               <ul>
                 <li>Only send 1 Matic to enter selection. Multiple entries will not be counted from the same wallet address</li>
@@ -149,13 +150,15 @@
                 </li>
               </ul>
             </div>
-            <div class="card-footer bg-light bg-gradient">
+            <div class="card-footer bg-light bg-gradient btn-wrapper">
+              <div class="btn-wrapper">
               <button class="button-6" role="button">Play</button>
               <div class="tooltip-wrapper">
                 <button class="button-6" onclick="copyTextDiv('copy-text2','copy-tooltip2')" onmouseout="outText('copy-tooltip2')">
                   <span class="tooltiptext " id="copy-tooltip2">Copy</span>
                 </button>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -175,8 +178,8 @@
         <div class="col-md-4 mb-5">
           <div class="card h-100">
             <div class="card-body">
-              <h2 class="card-title ">Mystery Project</h2>
-              <p class="card-text commaSeparated"> Connect and Enter </p>
+              <h2 class="card-title ">Crypto Toolkit</h2>
+              <p class="card-text commaSeparated"> TBA </p>
             </div>
             <div class="card-footer bg-light bg-gradient">
               <!-- <a href="#" class="btn effect04" data-sm-link-text="CLICK" target="_blank"><span>GOS Whitepaper</span></a> -->
