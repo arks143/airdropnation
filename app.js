@@ -12,6 +12,9 @@ let response = null;
 app.use(express.static('public',{extensions:['html']}));
 app.use(express.static('public/css',{extensions:['css']}));
 app.use(express.static('public/js',{extensions:['js']}));
+app.use(express.static('public/assets',{extensions:['pdf']}));
+
+
 
 // //Idiomatic expression in express to route and respond to a client request
 // app.get('/', (req, res) => { //get requests to the root ("/") will route here
