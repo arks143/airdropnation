@@ -215,16 +215,6 @@
 
         const getPlayers = async () => {
 
-        	 
-   //        let transactionParam = {
-   //          to: '0xc4a1183d825abcA8D8BE8Bdced99c72f43549522',
-   //          from: account,
-   //          value: '10000000000000000'
-   //        };
-       
-
-			// console.log(await window.contract.methods.enter().send(transactionParam));
-
             const data = await window.contract.methods.getPlayers().call();
             document.getElementById("players").innerHTML = data;
         }
