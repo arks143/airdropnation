@@ -228,7 +228,7 @@ const questions = [{
         ]
     },
     {
-        question: 'What is a Solana',
+        question: 'What is a Bitcoin',
         qnumber: 'q2',
         answers: [{
                 text: 'Fiat Currency',
@@ -239,7 +239,7 @@ const questions = [{
                 aid: '02'
             },
             {
-                text: 'A Blockchain',
+                text: 'A Crypto Currency',
                 aid: '03'
             },
             {
@@ -270,20 +270,20 @@ const questions = [{
         ]
     },
     {
-        question: 'What is a blockchain?',
+        question: 'What invented Bitcoin?',
         qnumber: 'q4',
         answers: [{
-                text: 'A 4 distributed ledger of trasactions',
+                text: 'Satoshi Nakamoto',
                 aid: '01'
             },
             {
-                text: 'A database',
+                text: 'Bill Clinton',
                 aid: '02'
             }
         ]
     },
     {
-        question: 'What is a Solana',
+        question: 'What is Ass coin',
         qnumber: 'q5',
         answers: [{
                 text: 'Fiat Currency',
@@ -294,7 +294,7 @@ const questions = [{
                 aid: '02'
             },
             {
-                text: 'A Blockchain',
+                text: 'A Coin you should not buy ',
                 aid: '03'
             },
             {
@@ -304,22 +304,22 @@ const questions = [{
         ]
     },
     {
-        question: 'What is Crypto used for?',
+        question: 'What was the price of Bitcoin September 21 2017',
         qnumber: 'q6',
         answers: [{
-                text: 'Transfer of wealth',
+                text: '12000',
                 aid: '01'
             },
             {
-                text: 'Hacking',
+                text: 'who cares',
                 aid: '02'
             },
             {
-                text: 'Google Search',
+                text: '$67884',
                 aid: '03'
             },
             {
-                text: 'IDK',
+                text: '42',
                 aid: '04'
             }
         ]
