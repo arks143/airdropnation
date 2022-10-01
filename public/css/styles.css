@@ -11411,7 +11411,6 @@ h2::before {
   font-size: 16px;
   padding: 16px 32px;
 }
-
 .btn-wrapper{
   display: inline-flex;
   text-transform: uppercase;
@@ -11420,4 +11419,5 @@ h2::before {
 h2, button{
   text-transform: uppercase;
 }
+
 
