@@ -206,7 +206,13 @@
         //3-read data from smart contract
         const readContract = async () => {
 
-			//console.log(await window.contract.methods.getBalance().call());
+
+		const winner = await window.contract.methods.pickWinner().send({
+			    to: '0xc4a1183d825abcA8D8BE8Bdced99c72f43549522',
+                from: account
+               
+            })
+
 
             const data = await window.contract.methods.getBalance().call();
             document.getElementById("dataArea").innerHTML = data;

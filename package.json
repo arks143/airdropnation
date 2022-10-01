@@ -6,6 +6,6 @@
     "express-openid-connect": "^2.8.0",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.1",
-    "web3": "^1.7.5"
+    "web3": "^1.8.0"
   }
 }
