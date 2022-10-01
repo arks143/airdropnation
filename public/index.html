@@ -27,17 +27,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                       <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li> -->
             <li class="nav-item">
               <a class="nav-link" href="#!">Telegram</a>
             </li>
-              <li class="nav-item">
-               <button class="button-6 wallet-connect" onclick="connectMetamask()">CONNECT TO METAMASK</button> 
+            <li class="nav-item">
+              <button class="button-6 wallet-connect" onclick="connectMetamask()">CONNECT TO METAMASK</button>
             </li>
-
-
-
-           
           </ul>
         </div>
       </div>
@@ -53,113 +48,69 @@
         <div class="col-lg-5">
           <p id="welcome"></p>
           <p id="accountArea">WALLET NOT CONNECTED</p>
-
-
         </div>
       </div>
       <!-- Call to Action-->
       <div class="card text-white bg-dark bg-gradient my-5 py-4 text-center">
         <div onclick="" class="card-body">
           <p class="text-white m-0 ">Welcome To AirDrop Nation.</p>
-          <p class="text-white m-0 ">Click the button below to enter the lottery. </p>
-          <p class="text-white m-0 ">Winner will be selected by random via smart contract</p>
-           <div class="btn-wrapper">
-                    <button class="button-6" id="send-button" disabled>Enter Lottery</button>
-     
+          <p class="text-white m-0 ">Click the button below to our whitelist for our airdrop. Registration is only 1 Matic. All participants will receive an airdrop of our next IDO </p>
+          <p class="text-white m-0 ">All entries will receive an airdrop of the ADN token.</p>
+          <div class="btn-wrapper">
+            <button class="button-6" id="send-button" disabled>Connect Wallet to Enter Whitelist</button>
           </div>
-  
-          
- 
+          <p class="text-white m-0 ">In the meantime take a look at the projects being incubated </p>
         </div>
-        <!-- <input type="text" value="Hello World" id="myInput"> -->
+      
       </div>
       <!-- Content Row-->
       <div class="row gx-4 gx-lg-5">
-
-
         <div class="col-md-4 mb-5">
           <div class="card h-100 ">
             <div class="card-body">
-              <h2 class="card-title">Crypto Quiz</h2>
+              <h2 class="card-title">Crypto School</h2>
               <p class="card-text commaSeparated"> This Course will take you therough the basics of crypto. </p>
               <p class="card-text commaSeparated"> It is important to understand the technology behind the assets you are investing in. </p>
-
-              <p class="card-text commaSeparated">As time goes on we will build a one stop shop for beginner crypto knowlege higlighting the benifits and pitfalls of the crypto industry. </p>
-
+              <img width="120" class="img-fluid rounded mx-auto d-block image" src="/assets/cryptoskool.png" />
+              <p class="card-text commaSeparated">Take the quiz and have a go, all participants will receive an airdrop of the tokens for this platform when finalised. </p>
+              <a href="">Take Quiz</a>
             </div>
-                       <div class="btn-wrapper">
-            <div class="card-footer"><a href="/quiz0.html">
-              <button class="button-6" role="button">Quiz 1</button></a>
-              <!-- <a class="btn btn-primary btn-sm enter-quiz" href="/quiz.html">Exam 101</a>  -->
+            <div class="card-footer">
+              <div id="timer0"></div>
             </div>
-              <div class="card-footer"><a href="/quiz1.html">
-              <button class="button-6" role="button">Quiz 2</button></a>
-              <!-- <a class="btn btn-primary btn-sm enter-quiz" href="/quiz.html">Exam 101</a>  -->
-            </div>
-              <div class="card-footer"><a href="/quiz2.html">
-              <button class="button-6" role="button">Quiz 3</button></a>
-              <!-- <a class="btn btn-primary btn-sm enter-quiz" href="/quiz.html">Exam 101</a>  -->
-            </div>
-           </div>
           </div>
         </div>
-
-
-
-
-
         <div class="col-md-4 mb-5">
           <div class="card h-100">
             <div class="card-body image">
               <h2 class="card-title ">GOS Protocol</h2>
               <p class="card-text commaSeparated"> This a new blockchiain powered by Gold and Silver. They will issue govenment backed gold and silver coins.</p>
-                     <p class="card-text commaSeparated"> Sacrafice join white-list</p>
-                     
+              <p class="card-text commaSeparated"> Take look at the Lite paper <a href="/assets/GOS-Blockchain-Lite_Paper.pdf">Here</a>
+              </p>
               <img class="img-fluid rounded mx-auto d-block image" src="/assets/gos-logo.png" />
-
-<p class="card-text commaSeparated"> Countdown until blockchain deployment</p>
-                       <h3 id="demo"></h3>
-
-                                      <div class="btn-wrapper">
-                    <button class="button-6" id="GOS-send-button" disabled>Connect wallet</button>
-          <div class="tooltip-wrapper">
-            <button class="button-6" onclick="copyTextDiv('copy-text','copy-tooltip')" onmouseout="outText('copy-tooltip')">
-              <span class="tooltiptext" id="copy-tooltip">Copy Address</span>
-            </button>
-          </div>
-          </div>
+              <!--                                       <div class="btn-wrapper"><div class="tooltip-wrapper"><button class="button-6" onclick="copyTextDiv('copy-text','copy-tooltip')" onmouseout="outText('copy-tooltip')"><span class="tooltiptext" id="copy-tooltip">Copy Address</span></button></div></div> -->
             </div>
-   
             <div class="card-footer bg-light bg-gradient">
-              <!-- <p id="players" class="commaSeparated" ></div> -->
-              <!-- <p class="card-text">Score</p> -->
-              <div class="tooltip-wrapper"> 
-              <a href="/assets/GOS-Blockchain-Lite_Paper.pdf"><button href="/public/assets/GOS-Blockchain-Lite_Paper.pdf" class="button-6" role="button">Lite Paper</button></a></div>
+              <div id="timer1"></div>
             </div>
           </div>
         </div>
         <div class="col-md-4 mb-5">
-          <div class="card h-100 container-card-body">
+          <div class="card h-100">
             <div class="card-body image">
               <h2 class="card-title ">Operation BlackBeard</h2>
               <p class="card-text commaSeparated"> This NFT project is tied to a beard oil company and mens mental health. Keep a look out for this project </p>
               <!-- <img width="200"src="/assets/OBB.jpg"/> -->
-              <img class="img-fluid rounded mx-auto d-block image" src="/assets/NFTOBB.png" />
-            </div>
-            <div class="middle">
-              <div class="text bg-dark bg-gradient">Visit Website</div>
+              <img class="img-fluid rounded mx-auto d-block image" src="/assets/NFTOBB.jpg" />
             </div>
             <div class="card-footer bg-light bg-gradient">
-              <!--         <div class="buttons"><div class="container"><a href="#" class="btn effect04 mx-auto d-block" data-sm-link-text="Twitter" target="_blank"><span>Twitter</span></a></div></div> -->
-              <button class="button-6" role="button" disabled>More Info</button>
+              <div id="timer2"></div>
             </div>
           </div>
         </div>
       </div>
       <!-- Content Row-->
       <div class="row gx-4 gx-lg-5">
-
-
         <div class="col-md-4 mb-5">
           <div class="card h-100 container-card-body">
             <div class="card-body image">
@@ -176,68 +127,40 @@
             </div>
           </div>
         </div>
-
-
         <div class="col-md-4 mb-5">
           <div class="card h-100 container-card-body">
             <div class="card-body image">
-              <h2 class="card-title ">Airdrop Nation Sacrafice</h2>
-              <p class="card-text commaSeparated"> Send 1 Matic to the following address </p>
-              <p class="card-text commaSeparated copy-text2"> LOTTERY SMART CONTRACT </p>
-              <ul>
-                <li>Only send 1 Matic to enter selection. Multiple entries will not be counted from the same wallet address</li>
-                <li>Winner will be selected once the first 999 entries have been received</li>
-                <li>Winner will be given 90% of the prize pool automatically via smart </li>
-                <li>All Participants will be eligible for SOL TIGER NFT Airdrop</li>
-                <li>You can enter for free by following our <a href=""> twitter</a> and joining our <a href=""> telegram group</a>
-                </li>
-              </ul>
+              <h2 class="card-title ">Cryptocade</h2>
+              <p class="card-text commaSeparated"> This games arcade bringing you an array of gemes available across diffrent platforms </p>
+               <img width="200" class="img-fluid rounded mx-auto d-block image" src="/assets/cryptocade.png" />
+      
+      <p class="card-text commaSeparated"> Stay tuned for more information </p>
 
             </div>
-               <div class="middle">
+            <div class="middle">
               <div class="text bg-dark bg-gradient">Comming Soon</div>
             </div>
             <div class="card-footer bg-light bg-gradient btn-wrapper">
-     <!--          <div class="btn-wrapper">
-              <button  class="button-6 comming-soon" role="button">Play</button>
-              <div class="tooltip-wrapper">
-                <button class="button-6" onclick="copyTextDiv('copy-text2','copy-tooltip2')" onmouseout="outText('copy-tooltip2')">
-                  <span class="tooltiptext " id="copy-tooltip2">Copy</span>
-                </button>
-              </div>
-            </div> -->
+              <!--          <div class="btn-wrapper"><button  class="button-6 comming-soon" role="button">Play</button><div class="tooltip-wrapper"><button class="button-6" onclick="copyTextDiv('copy-text2','copy-tooltip2')" onmouseout="outText('copy-tooltip2')"><span class="tooltiptext " id="copy-tooltip2">Copy</span></button></div></div> -->
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="col-md-4 mb-5">
-          <div class="card h-100">
-            <div class="card-body container-card-body">
+                <div class="col-md-4 mb-5">
+          <div class="card h-100 container-card-body">
+            <div class="card-body image">
               <h2 class="card-title ">Crypto Toolkit</h2>
-              <p class="card-text commaSeparated"> TBA </p>
+              <p class="card-text commaSeparated"> This platform will provide to essentual crypto tools to keep in your aeresnal</p>
+      
+      <p class="card-text commaSeparated"> Stay tuned for more information </p>
             </div>
-            <div class="card-footer bg-light bg-gradient">
-              <!-- <a href="#" class="btn effect04" data-sm-link-text="CLICK" target="_blank"><span>GOS Whitepaper</span></a> -->
+            <div class="middle">
+              <div class="text bg-dark bg-gradient">Comming Soon</div>
+            </div>
+            <div class="card-footer bg-light bg-gradient btn-wrapper">
+              <!--          <div class="btn-wrapper"><button  class="button-6 comming-soon" role="button">Play</button><div class="tooltip-wrapper"><button class="button-6" onclick="copyTextDiv('copy-text2','copy-tooltip2')" onmouseout="outText('copy-tooltip2')"><span class="tooltiptext " id="copy-tooltip2">Copy</span></button></div></div> -->
             </div>
           </div>
         </div>
-
-
-   
-
-
-
 
       </div>
       <!-- Footer-->
@@ -253,6 +176,5 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="/scripts.js"></script>
       <script src="/vault.js"></script>
-
   </body>
 </html>

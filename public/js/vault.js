@@ -5,8 +5,8 @@
                 const accounts = await ethereum.request({method: "eth_requestAccounts"});
                 account = accounts[0];
                 document.getElementById("accountArea").innerHTML = account;
-                document.getElementById("send-button").innerHTML = "ENTER";
-                document.getElementById("GOS-send-button").innerHTML = "SACRAFICE";
+                document.getElementById("send-button").innerHTML = "ENTER WHITELIST";
+               
                 document.getElementsByClassName("wallet-connect")[0].innerHTML="CONNECTED";
                 document.getElementById("welcome").innerHTML="WELCOME";
                 document.getElementById("send-button").disabled = false;
