@@ -5,6 +5,11 @@ const connectMetamask = async () => {
             method: "eth_requestAccounts"
         });
         account = accounts[0];
+
+
+   if(window.ethereum.networkVersion == 137) {
+
+
         document.getElementById("accountArea").innerHTML = account;
         document.getElementById("send-button-txt").innerHTML = "ENTER WHITELIST";
 
@@ -15,84 +20,97 @@ const connectMetamask = async () => {
        await connectContract();
        await getPlayers();
 
-
-
+}else{
+  console.log('incorrect network');
+  document.getElementsByClassName("wallet-connect")[0].innerHTML = "INCORRECT NETWORK SWITCH TO MATIC";
+}
 
     }
 }
 
 
 const connectContract = async () => {
-    const ABI = [{
-            "inputs": [],
-            "stateMutability": "nonpayable",
-            "type": "constructor"
-        },
-        {
-            "inputs": [],
-            "name": "enter",
-            "outputs": [],
-            "stateMutability": "payable",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "getBalance",
-            "outputs": [{
+    const ABI = [
+    {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [],
+        "name": "enter",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getBalance",
+        "outputs": [
+            {
                 "internalType": "uint256",
                 "name": "",
                 "type": "uint256"
-            }],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "getPlayers",
-            "outputs": [{
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getPlayers",
+        "outputs": [
+            {
                 "internalType": "address payable[]",
                 "name": "",
                 "type": "address[]"
-            }],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "owner",
-            "outputs": [{
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "moveFunds",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
                 "internalType": "address",
                 "name": "",
                 "type": "address"
-            }],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "pickWinner",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [{
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "internalType": "uint256",
                 "name": "",
                 "type": "uint256"
-            }],
-            "name": "players",
-            "outputs": [{
+            }
+        ],
+        "name": "players",
+        "outputs": [
+            {
                 "internalType": "address payable",
                 "name": "",
                 "type": "address"
-            }],
-            "stateMutability": "view",
-            "type": "function"
-        }
-    ];
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+];
 
-    const Address = "0xAb40bF65645d1a45149429b62820efc403264851";
+    const Address = "0xCC20445A8c5C7A423974aBdB5fb37bF36d933826";
     window.ethereum = await new Web3(window.ethereum);
     window.contract = await new window.ethereum.eth.Contract(ABI, Address);
 
@@ -104,10 +122,12 @@ const connectContract = async () => {
 
 const sendCrypto = async () => {
 
+await connectMetamask();
     console.log(await window.contract.methods);
 
+
     let transactionParam = {
-        to: '0xAb40bF65645d1a45149429b62820efc403264851',
+        to: '0xCC20445A8c5C7A423974aBdB5fb37bF36d933826',
         from: account,
         value: '1000000000000000000',
         gas: '21000'

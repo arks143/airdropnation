@@ -76,7 +76,7 @@ var x = setInterval(function() {
 
 function startTimer2(){
   // Set the date we're counting down to
-var countDownDate = new Date("Jan 21, 2022 16:00:00").getTime();
+var countDownDate = new Date("Jan 30, 2023 16:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -107,7 +107,7 @@ var x = setInterval(function() {
 
 function startTimer3(){
   // Set the date we're counting down to
-var countDownDate = new Date("Jan 21, 2023 16:00:00").getTime();
+var countDownDate = new Date("Jan 1, 2023 16:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {

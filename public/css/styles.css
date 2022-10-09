@@ -11296,6 +11296,15 @@ textarea.form-control-lg {
     background-size: cover;
     padding: 10px;
 }
+.tiger{  
+
+  background-image: url(/assets/tigersoulheader.jpeg);
+   min-height: 400px;
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+
+}
 .hero-block h1, .hero-block h2, .hero-block h3, .hero-block p{
   color: #ffffff;
 }
@@ -11419,5 +11428,6 @@ h2::before {
 h2, button{
   text-transform: uppercase;
 }
-
+ 
+ #timer0, #timer1, #timer2, #timer3{clear: both;margin: auto;text-align: center;}
 
