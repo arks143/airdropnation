@@ -1,6 +1,42 @@
+
+
 let account;
 const connectMetamask = async () => {
-    if (window.ethereum !== "undefined") {
+
+
+  const provider = await detectEthereumProvider();
+
+
+
+    if (provider) {
+    // handle provider
+    handleEthereum()
+  } else {
+    // handle no provider
+  }
+
+
+
+// if (window.ethereum) {
+//   handleEthereum();
+// } else {
+//   window.addEventListener('ethereum#initialized', handleEthereum, {
+//     once: true,
+//   });
+
+//   // If the event is not dispatched by the end of the timeout,
+//   // the user probably doesn't have MetaMask installed.
+//   setTimeout(handleEthereum, 3000); // 3 seconds
+// }
+}
+
+
+
+async function handleEthereum() {
+  const { ethereum } = window;
+  if (ethereum && ethereum.isMetaMask) {
+    console.log('Ethereum successfully detected!');
+
         const accounts = await ethereum.request({
             method: "eth_requestAccounts"
         });
@@ -8,11 +44,8 @@ const connectMetamask = async () => {
 
 
    if(window.ethereum.networkVersion == 137) {
-
-
         document.getElementById("accountArea").innerHTML = account;
         document.getElementById("send-button-txt").innerHTML = "ENTER WHITELIST";
-
         document.getElementsByClassName("wallet-connect")[0].innerHTML = "CONNECTED";
         document.getElementById("welcome").innerHTML = "WELCOME";
         document.getElementById("send-button-txt").disabled = false;
@@ -24,24 +57,35 @@ const connectMetamask = async () => {
   console.log('incorrect network');
   document.getElementsByClassName("wallet-connect")[0].innerHTML = "INCORRECT NETWORK SWITCH TO MATIC";
 }
-
-    }
+    // Access the decentralized web!
+  } else {
+    console.log('Already installed MetaMask!');
+  }
 }
+
+
 
 
 const connectContract = async () => {
     const ABI = [
     {
         "inputs": [],
-        "stateMutability": "nonpayable",
-        "type": "constructor"
-    },
-    {
-        "inputs": [],
         "name": "enter",
         "outputs": [],
         "stateMutability": "payable",
         "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "moveFunds",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
     },
     {
         "inputs": [],
@@ -67,13 +111,6 @@ const connectContract = async () => {
             }
         ],
         "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "moveFunds",
-        "outputs": [],
-        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
@@ -110,11 +147,9 @@ const connectContract = async () => {
     }
 ];
 
-    const Address = "0xCC20445A8c5C7A423974aBdB5fb37bF36d933826";
+    const Address = "0x95072EB497244b5a13f012D88be48E4e8b37AeE8";
     window.ethereum = await new Web3(window.ethereum);
     window.contract = await new window.ethereum.eth.Contract(ABI, Address);
-
-
 
 
 }
@@ -127,7 +162,7 @@ await connectMetamask();
 
 
     let transactionParam = {
-        to: '0xCC20445A8c5C7A423974aBdB5fb37bF36d933826',
+        to: '0x95072EB497244b5a13f012D88be48E4e8b37AeE8',
         from: account,
         value: '1000000000000000000',
         gas: '21000'
